@@ -1,0 +1,15 @@
+node_modules
+dist
+out
+release
+output
+*.log
+.DS_Store
+Thumbs.db
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.idea
+.vscode
+coverage

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsy Controls</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="collapsed">
+    <main id="root" class="root">
+      <button id="toggle-panel" class="handle" type="button" aria-label="Open controls" title="Open controls">
+        <span class="handle-pip"></span>
+        <span class="handle-pip"></span>
+        <span class="handle-pip"></span>
+      </button>
+
+      <section id="drawer" class="drawer" aria-hidden="true">
+        <header class="drawer-header drag-region">
+          <div class="drawer-title">
+            <span class="drawer-kicker">Control panel</span>
+            <strong>Responsy</strong>
+          </div>
+          <div class="window-actions">
+            <button type="button" data-window-action="minimize" aria-label="Minimize" title="Minimize">
+              <span></span>
+            </button>
+            <button type="button" data-window-action="close" aria-label="Close" title="Close">
+              <span></span>
+            </button>
+          </div>
+        </header>
+
+        <form id="url-form" class="url-form">
+          <label class="address-field">
+            <span class="field-label">Address</span>
+            <input
+              id="url-input"
+              type="text"
+              placeholder="https://example.com"
+              autocomplete="off"
+              spellcheck="false"
+              required
+            />
+          </label>
+          <button type="submit" class="primary-action">Open</button>
+        </form>
+
+        <section class="section">
+          <div class="section-label">Viewport</div>
+          <nav class="view-switcher" aria-label="Viewport size">
+            <button type="button" data-view="mobile" class="active">Phone</button>
+            <button type="button" data-view="tablet">Tablet</button>
+            <button type="button" data-view="desktop">Desktop</button>
+          </nav>
+        </section>
+
+        <section class="section">
+          <div class="section-label">Navigation</div>
+          <div class="nav-actions">
+            <button type="button" data-nav="back">Back</button>
+            <button type="button" data-nav="forward">Forward</button>
+            <button type="button" data-nav="reload">Reload</button>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-label">Screenshot</div>
+          <div class="capture-actions">
+            <button type="button" data-shot="visible">Visible area</button>
+            <button type="button" data-shot="full">Full page</button>
+          </div>
+        </section>
+
+        <footer class="status-bar">
+          <div id="status-text" class="status-text">Open the slim tab on the right.</div>
+          <button id="collapse-panel" class="ghost-action" type="button">Hide panel</button>
+        </footer>
+      </section>
+    </main>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>
